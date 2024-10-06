@@ -15,3 +15,4 @@ print(m.sqrt(25))
 #2 forma --> importar un metodo y ponerle un alias de math
 from math import sqrt as raiz
 print(raiz(25))
+
