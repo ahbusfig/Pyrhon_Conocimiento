@@ -1,0 +1,23 @@
+En esta etapa final, daremos los toques finales a nuestro chat multiusuario, centrándonos en la seguridad y privacidad de las conversaciones. Utilizaremos la librería SSL y herramientas como OpenSSL para implementar un cifrado robusto.
+
+Aprenderemos cómo integrar estas tecnologías en nuestro chat para asegurar que las comunicaciones entre usuarios sean seguras y privadas. Esta sesión es crucial para entender la importancia del cifrado en aplicaciones de mensajería y cómo aplicarlo efectivamente en proyectos reales.
+
+A continuación, se proporcionan los comandos utilizados en la clase:
+
+openssl genpkey -algorithm RSA -out server-key.key -aes256
+
+Esta instrucción genera una nueva clave privada RSA. La opción ‘-algorithm RSA‘ especifica el uso del algoritmo RSA. ‘-out server-key.key‘ indica que la clave generada se guardará en un archivo llamado ‘server-key.key‘. La opción ‘-aes256‘ significa que la clave privada será cifrada usando el algoritmo AES-256, lo que añade una capa de seguridad al requerir una contraseña para acceder a la clave.
+
+openssl req -new -key server-key.key -out server.csr
+
+Esta línea crea una nueva Solicitud de Firma de Certificado (CSR) utilizando la clave privada RSA que generaste. ‘-new‘ indica que se trata de una nueva solicitud, ‘-key server-key.key‘ especifica que se usará la clave privada almacenada en ‘server-key.key‘, y ‘-out server.csr‘ guarda la CSR generada en un archivo llamado ‘server.csr‘. La CSR es necesaria para solicitar un certificado digital a una Autoridad Certificadora (CA).
+
+openssl x509 -req -days 365 -in server.csr -signkey server-key.key -out server-cert.pem
+
+Este comando genera un certificado autofirmado basado en la CSR. ‘-req‘ indica que se está procesando una CSR, ‘-days 365‘ establece la validez del certificado por un año, ‘-in server.csr‘ especifica la CSR de entrada, ‘-signkey server-key.key‘ utiliza la misma clave privada para firmar el certificado, y ‘-out server-cert.pem‘ guarda el certificado generado en un archivo llamado ‘server-cert.pem‘.
+
+openssl rsa -in server-key.key -out server-key.key
+
+Este comando se utiliza para quitar la contraseña de una clave privada RSA protegida. ‘-in server-key.key‘ especifica el archivo de la clave privada cifrada como entrada, y ‘-out server-key.key‘ indica que la clave privada sin cifrar se guardará en el mismo archivo. Al ejecutar este comando, se te pedirá la contraseña actual de la clave privada. Una vez proporcionada, OpenSSL generará una versión sin cifrar de la clave privada y la guardará en el mismo archivo, sobrescribiendo la versión cifrada.
+
+Este paso se hace a menudo para simplificar la automatización en entornos donde ingresar una contraseña manualmente no es práctico. Sin embargo, es importante ser consciente de que al eliminar la contraseña, la clave privada se vuelve más vulnerable al acceso no autorizado.
