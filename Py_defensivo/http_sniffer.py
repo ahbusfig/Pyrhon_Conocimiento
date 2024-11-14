@@ -43,9 +43,6 @@ def process_packet(packet):
 # Función para iniciar la captura de paquetes en una interfaz específica
 def sniff(interface):
     # Captura los paquetes en la interfaz especificada y usa la función process_packet para procesarlos
-    scapy.sniff(iface=interface, prn=process_packet, store=0)
-
-def main():
     #sniff("ens33") #Cambiar la interfaz de red segun la usada! -- linux
     sniff("Wi-Fi")
 
