@@ -4,7 +4,7 @@ import json  # Importa la biblioteca json para formatear la respuesta
 # Define la URL de la API de OpenWeatherMap con la ciudad y tu clave de API
 lat = 40.416775
 lon = -3.703790
-api_key = "f9ca7dff0af4a33d2751261e511c954b"  # Reemplaza esto con tu clave de API de OpenWeatherMap
+api_key = ""  
 ciudad = "londres"
 url = f"http://api.openweathermap.org/data/2.5/weather?q={ciudad}&appid={api_key}&units=metric&lang=es"
        
