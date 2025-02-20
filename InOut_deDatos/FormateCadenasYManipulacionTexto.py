@@ -28,13 +28,14 @@ print(cadena.endswith("o"))
 print(cadena.endswith("mundo"))
 
 # Ejemplos con el método count
+print(f"\n")
 cadena = "Hola mundoo"
 print("La o aparece --> ",cadena.count("o") , " Veces") # Cuenta cuántas veces aparece 'o' en la cadena
 print("Hola aparece --> ",cadena.count("Hola")) # Cuenta cuántas veces aparece 'Hola' en la cadena
 print("Contador de espacios en blanco --> ",cadena.count(" ")) # Cuenta cuántos espacios en blanco hay en la cadena
 print("mundo aparece --> ",cadena.count("mundo")) # Cuenta cuántas veces aparece 'mundo' en la cadena
 print("cuántas veces aparece 'a' en la cadena desde el índice 0 hasta el 5 --> ",cadena.count("a", 0, 5)) # Cuenta cuántas veces aparece 'a' en la cadena desde el índice 0 hasta el 5
-
+print(f"\n")
 # Ejemplos con el método join
 
 # Unir una lista de palabras en una sola cadena con espacios
@@ -61,10 +62,12 @@ cadena_unida_saltos = "\n".join(palabras)
 print("Unir con saltos de línea:\n", cadena_unida_saltos)
 
 #swapcase,title,capitalize
-s = "hola bueNas dias"
+print(f"\n")
+s = "hola bueNas diass"
 print(s.capitalize()) #1 letra en mayuscula
 print(s.title())  # 1 letra de cada palabra en mayuscula
 print(s.swapcase()) # Cambias mayusc por minusc y viceversa 
+print(f"\n")
 
 # Ejemplos con métodos is...
 

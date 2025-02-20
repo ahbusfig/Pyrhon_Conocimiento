@@ -12,7 +12,7 @@
 """
 mi_conjunto = {1,2,3}
 print("\n Vamos a usar metodos utiles para modificar conjuntos --> add, update, remove, discar")
-mi_conjunto.add(4) #Añade un nuevo el. al conjunto
+mi_conjunto.add(4) #Añade un nuevo el. 4 al conjunto
 mi_conjunto.update({5,6,7,8})#Añade varios el. ...
 print(mi_conjunto)
 mi_conjunto.remove(3)#Remueve un elemento -> q exista ojoo
@@ -41,9 +41,11 @@ norepeat = list(set(lista1))#set() --> lo transforma en conj y list() --> lo vue
 print(norepeat)
 
 
-
+print(f"\n")
 mi_conjunto = set(range(20))
+print(mi_conjunto)
 print( 1,2,3,4 in mi_conjunto)
+print(f"\n")
 
 # Ejemplo de intersección
 print("\n La operacion intersection -> para obtener los elementos comunes entre dos conjuntos")

@@ -26,7 +26,7 @@ print(tupla4) #(1, 2, 3, 1, 2, 3, 1, 2, 3, 4, 5, 6, 4, 5, 6)
 
 #!/usr/bin/env python3
 #Creamos una tupla nueva 
-mi_tupla = (1,2,3,4,5,6,7,8)
+mi_tupla = (1,2,3,4,5,6,7,8) 
 #Crear otra tupla a partir de la original, que cumpla ciertas condiciones
 numeros_pares = tuple(i for i in mi_tupla if i % 2 == 0) #Queremos listar de la tupla orig, los num. pares
 print(numeros_pares)

@@ -77,7 +77,6 @@ def rastreo_redireccionamiento(url):
         print(f"\n[+] Ha pasado por la url {request.url} y nos ha dado el codigo de estado {request.status_code}")
 
     print(f"\n[+] La url final es --> {r.url} y nos ha dado el codigo de estado {r.status_code}")
-
 #rastreo_redireccionamiento(url)
 #--------------------------------------Arrastre de sesiones---------------------------------------------
 import requests

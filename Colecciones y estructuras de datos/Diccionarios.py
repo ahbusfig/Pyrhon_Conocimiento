@@ -25,7 +25,7 @@ hacking_tools = {
 herramienta = "Nmap"
 print("\n Obtener un elemento usando get --> ",hacking_tools.get(herramienta,"No se ha encontrado la herramienta"))
 # Acceso rápido a los valores mediante sus claves
-print("\n Descripción de Nmap:", hacking_tools["Nmap"])  # Salida: Herramienta de escaneo de red
+print(f"\n Descripción de {herramienta}:", hacking_tools[herramienta])  # Salida: Herramienta de escaneo de red
 
 # Añadir un nuevo par clave-valor
 hacking_tools["Burp Suite"] = "Herramienta de prueba de seguridad web"

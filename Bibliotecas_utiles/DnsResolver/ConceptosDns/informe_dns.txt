@@ -1,0 +1,46 @@
+Auditoría DNS
+Dominio: example.com
+
+Registros A:
+ - 96.7.128.175
+ - 23.215.0.138
+ - 23.215.0.136
+ - 23.192.228.80
+ - 23.192.228.84
+ - 96.7.128.198
+
+Registros AAAA:
+ - 2600:1406:3a00:21::173e:2e66
+ - 2600:1406:3a00:21::173e:2e65
+ - 2600:1406:bc00:53::b81e:94ce
+ - 2600:1408:ec00:36::1736:7f24
+ - 2600:1408:ec00:36::1736:7f31
+ - 2600:1406:bc00:53::b81e:94c8
+
+Registros MX:
+ - 0 .
+
+Registros NS:
+ - b.iana-servers.net.
+ - a.iana-servers.net.
+
+Registros TXT:
+ - "v=spf1 -all"
+ - "_k2n1y4vw3qtb4skdx9e7dxt97qrmmq9"
+
+Registros CNAME:
+ - No se encontraron registros CNAME.
+
+Resolución inversa:
+IP 96.7.128.175:
+ - a96-7-128-175.deploy.static.akamaitechnologies.com.
+IP 23.215.0.138:
+ - a23-215-0-138.deploy.static.akamaitechnologies.com.
+IP 23.215.0.136:
+ - a23-215-0-136.deploy.static.akamaitechnologies.com.
+IP 23.192.228.80:
+ - a23-192-228-80.deploy.static.akamaitechnologies.com.
+IP 23.192.228.84:
+ - a23-192-228-84.deploy.static.akamaitechnologies.com.
+IP 96.7.128.198:
+ - a96-7-128-198.deploy.static.akamaitechnologies.com.
