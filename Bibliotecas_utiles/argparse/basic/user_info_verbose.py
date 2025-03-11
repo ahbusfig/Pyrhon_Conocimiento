@@ -12,13 +12,15 @@ parser.add_argument("--verbose", action="store_true", help="Activa el modo detal
 # Función que muestra la información
 def mostrar_info():
     args = parser.parse_args()
-    print(f"Nombre: {args.nombre}")
-    print(f"Edad: {args.e}")
-    print(f"Ciudad de origen: {args.ciudad}")
-    
+   
     # Mostrar detalles adicionales si se activa la bandera --verbose
     if args.verbose:
         print("Modo verbose activado: Todos los datos han sido mostrados con éxito.")
+    else:
+        print(f"Nombre: {args.nombre}")
+        print(f"Edad: {args.e}")
+        print(f"Ciudad de origen: {args.ciudad}")
+    
 
 # Ejecutar la función si es el script principal
 if __name__ == "__main__":

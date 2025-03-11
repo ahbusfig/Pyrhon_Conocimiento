@@ -11,6 +11,7 @@ import dns.resolver
 dominio = "forocoches.com"
 resIpv4 = dns.resolver.resolve(dominio, "A")
 resIpv6 = dns.resolver.resolve(dominio, "AAAA")
+
 #Imprimir respuesta
 for ip in resIpv4:
     print(f"Direccion IP: {ip}")

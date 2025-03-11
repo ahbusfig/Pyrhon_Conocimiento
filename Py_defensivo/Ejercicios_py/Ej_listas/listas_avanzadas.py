@@ -29,8 +29,8 @@ from itertools import permutations
 def permutacion(lista):
     return print(list(permutations(lista)))
 
-# lista = [1, 2]
-# permutacion(lista)
+lista = [1, 2, 3]
+permutacion(lista)
 # Ejercicio 3: Combinaciones de una lista
 # Escribe una función que genere todas las combinaciones posibles de una lista para un tamaño dado.
 def combinaciones_lista(lista, tam):

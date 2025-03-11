@@ -56,9 +56,9 @@ def rotar_lista(lista,pasos):
         return lista  # Si la lista está vacía, retornar la lista vacía
     pasos = pasos % len(lista)  # Asegurarse de que los pasos no excedan la longitud de la lista
     return print(lista[-pasos:] + lista[:-pasos])
-# lista1 = [1, 2, 3, 4, 5]
-# pasos = 2
-# rotar_lista(lista1,pasos)
+lista1 = [1, 2, 3, 4, 5]
+pasos = 2
+rotar_lista(lista1,pasos)
 
 # Ejercicio 4: Intercalar listas
 # Escribe una función que tome dos listas y devuelva una nueva lista que intercale los elementos de ambas listas.
@@ -67,7 +67,7 @@ def intercalar_listas(lista1,lista2):
     len1, len2 = len(lista1), len(lista2)
     min_len = min(len1, len2)
     
-    # Intercalar elementos de ambas listas hasta la longitud mínima
+    # Intercalar elementos de ambas listas hasta la longitud mínima o si son cuadradas
     for i in range(min_len):
         res.append(lista1[i])
         res.append(lista2[i])
@@ -79,9 +79,9 @@ def intercalar_listas(lista1,lista2):
         res.extend(lista2[min_len:])
     
     return res
-# lista1 = [1, 3, 5]
-# lista2 = [2, 4, 6,7]
-# intercalar_listas(lista1,lista2)
+lista1 = [1, 3, 5]
+lista2 = [2, 4, 6,7,8,9]
+print(intercalar_listas(lista1,lista2))
 
 # Ejercicio 5: Encontrar elementos comunes
 # Escribe una función que tome dos listas y devuelva una nueva lista con los elementos comunes a ambas listas.
@@ -139,11 +139,11 @@ def eliminar_indice_impar(lista):
 # Ejercicio 9: Encontrar la sublista más larga de elementos consecutivos
 # Escribe una función que encuentre la sublista más larga de elementos consecutivos en una lista de números.
 def sublista_mas_grande(lista):
-    if not lista:
+    if not lista: # Si la lista esta vacia
         return []
 
-    longest = []
-    current = [lista[0]]
+    longest = []  #Lista donde se guardará la sublista mas grande
+    current = [lista[0]] #Valor actual
 
     for i in range(1, len(lista)):
         if lista[i] == lista[i - 1] + 1:
@@ -157,8 +157,8 @@ def sublista_mas_grande(lista):
         longest = current
 
     return print(longest)
-# lista = [1, 2, 3, 5, 6, 7, 8, 9]
-# sublista_mas_grande(lista)
+lista = [1, 2, 3, 5, 2 , 3, 6, 7, 8, 9]
+sublista_mas_grande(lista)
 
 # Ejercicio 10: Ordenar lista de listas por longitud
 # Escribe una función que tome una lista de listas y la ordene por la longitud de las sublistas.
@@ -172,5 +172,56 @@ def ordenar_por_long_sublistas(lista):
     res.sort(key=len)
     return print(colored(res,"green"))  
 
-lista_de_listas = [[1, 2, 3], [4, 5], [6, 7, 8, 9], [10]]
-ordenar_por_long_sublistas(lista_de_listas)
+# lista_de_listas = [[1, 2, 3], [4, 5], [6, 7, 8, 9], [10]]
+# ordenar_por_long_sublistas(lista_de_listas)
+
+def invertir_palabras(texto):
+    palabra = ""
+    palabras = []
+    
+    for char in texto:
+        if char == " ":
+            palabras.append(palabra)
+            palabra = ""
+        else:
+            palabra += char
+    palabras.append(palabra)  # Última palabra
+    
+    resultado = ""
+    for palabra in reversed(palabras):
+        resultado += palabra + " "
+    
+    return resultado.strip()
+
+# print(invertir_palabras("Hola mundo desde Python"))
+
+
+#Ej 12 Implementa una función que encuentre el primer número repetido en una lista.
+
+lista = [1,2,3,4,4,3,2]
+
+def encontrar_primer_num_rep_v1(lista):
+    res = 0
+    num_anterior = 0
+
+    for num in lista:
+
+        if num < num_anterior:
+            num_anterior = num
+        elif num > num_anterior:
+            num_anterior = num
+        elif num_anterior == num:
+            res = num
+            return print(res)
+
+def encontrar_primer_rep_v2(lista):
+    vistos = set() #Def un conjunto vacio
+    for num in lista:
+        if num in vistos: # Si el numero está dentro del conjunto es el repetido
+            return print(num)
+        vistos.add(num) # Añadir num al conjunto de vistos
+    return None  # Si no hay números repetidos
+
+
+# encontrar_primer_num_rep_v1(lista)
+encontrar_primer_rep_v2(lista)
